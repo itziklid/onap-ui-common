@@ -1,6 +1,6 @@
 {
-  "name": "onap-ui",
-  "version": "4.0.0-alpha.9",
+  "name": "onap-ui-common",
+  "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -10,10 +10,8 @@
     "build-icons": "node utils/create-svg-icons-map.js",
     "copy-build-file": "node utils/copy-build-files.js"
   },
-  "dependencies": {
-    "delete": "^1.1.0"
-  },
   "devDependencies": {
+    "delete": "^1.1.0",
     "copy": "^0.3.2",
     "copy-dir": "^0.3.0"
   }
