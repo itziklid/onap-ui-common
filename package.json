@@ -6,10 +6,9 @@
   "scripts": {
     "prebuild": "node utils/delete-folders.js",
     "build": "npm run build-common",
-    "build-common": "npm run prebuild && npm run build-icons && npm run copy-scss",
+    "build-common": "npm run prebuild && npm run build-icons && npm run copy-build-file",
     "build-icons": "node utils/create-svg-icons-map.js",
-    "copy-scss": "node utils/copy-scss-files.js",
-
+    "copy-build-file": "node utils/copy-build-files.js",
     "prebuild2": "node utils/delete-folders.js",
     "build2": "npm run build-common",
     "build-common2": "npm run prebuild && npm run build-icons && npm run build-scss && npm run build-webpack && npm run build-rollup",

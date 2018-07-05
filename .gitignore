@@ -1,6 +1,6 @@
 /dist
 /tmp
-/lib/.generated
+/lib
 /build
 /node_modules
 npm-debug.log*

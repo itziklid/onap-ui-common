@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const svgFolder = path.resolve(__dirname + '/../assets/sdc-icons/');
-const iconMapFile = path.resolve(__dirname + '/../lib/.generated/icons-map/icons-map.json');
-const iconMapTSFile = path.resolve(__dirname + '/../lib/.generated/icons-map/icons-map.js');
+const iconMapFile = path.resolve(__dirname + '/../lib/icons-map.json');
+const iconMapTSFile = path.resolve(__dirname + '/../lib/icons-map.js');
 const disallowedSvgAttributes = ['fill', 'id', 'width', 'height'];
 const disallowedSvgStyle = ['fill'];
 const disallowedSvgInlineAttributes = ['fill', 'id'];
