@@ -1,6 +1,6 @@
 {
   "name": "onap-ui-common",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "private": false,
   "license": "MIT",
   "author": "",
@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/onap-sdc/onap-ui-common#readme",
   "files": [
-    "lib/**.*",
+    "lib",
     "README.md"
   ],
   "scripts": {
