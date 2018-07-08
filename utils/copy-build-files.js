@@ -7,6 +7,6 @@ copy('components/**/*.scss', 'lib/components/', function(err, file) {
   // exposes the vinyl `file` created when the file is copied
 });
 
-copy('utils/build-files/*.*', 'lib/', function(err, file) {
+copy('utils/build-files/index.js', 'lib/', function(err, file) {
     // exposes the vinyl `file` created when the file is copied
 });

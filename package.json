@@ -1,8 +1,21 @@
 {
   "name": "onap-ui-common",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onap-sdc/onap-ui-common"
+  },
+  "bugs": {
+    "url": "https://github.com/onap-sdc/onap-ui-common/issues"
+  },
+  "homepage": "https://github.com/onap-sdc/onap-ui-common#readme",
+  "files": [
+    "lib",
+    "README.md"
+  ],
   "scripts": {
     "prebuild": "node utils/delete-folders.js",
     "build": "npm run build-common",
