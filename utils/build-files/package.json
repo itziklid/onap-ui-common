@@ -1,7 +1,7 @@
 {
     "name": "onap-ui-common",
     "description": "Onap-UI common library contains icons map and styles",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "main": "index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
