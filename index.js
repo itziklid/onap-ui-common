@@ -1,4 +1,4 @@
-var icons_map_js = require('./icons-map.js');
+var icons_map_js = require('./lib/icons-map.js');
 
 'use strict';
 
