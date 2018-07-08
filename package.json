@@ -20,7 +20,7 @@
   "scripts": {
     "prebuild": "node utils/delete-folders.js",
     "build": "npm run build-common",
-    "build-common": "npm run prebuild && npm run build-icons",
+    "build-common": "npm run prebuild && npm run build-icons && copy-build-file",
     "build-icons": "node utils/create-svg-icons-map.js",
     "copy-build-file": "node utils/copy-build-files.js"
   },
