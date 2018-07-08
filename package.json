@@ -1,6 +1,6 @@
 {
   "name": "onap-ui-common",
-  "version": "1.0.41",
+  "version": "1.0.43",
   "private": false,
   "license": "MIT",
   "author": "",
@@ -20,7 +20,7 @@
   "scripts": {
     "prebuild": "node utils/delete-folders.js",
     "build": "npm run build-common",
-    "build-common": "npm run prebuild && npm run build-icons && copy-build-file",
+    "build-common": "npm run prebuild && npm run build-icons && npm run copy-build-file",
     "build-icons": "node utils/create-svg-icons-map.js",
     "copy-build-file": "node utils/copy-build-files.js"
   },
