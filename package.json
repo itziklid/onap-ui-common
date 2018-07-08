@@ -4,6 +4,7 @@
   "private": false,
   "license": "MIT",
   "author": "",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/onap-sdc/onap-ui-common"
@@ -19,7 +20,7 @@
   "scripts": {
     "prebuild": "node utils/delete-folders.js",
     "build": "npm run build-common",
-    "build-common": "npm run prebuild && npm run build-icons && npm run copy-build-file",
+    "build-common": "npm run prebuild && npm run build-icons",
     "build-icons": "node utils/create-svg-icons-map.js",
     "copy-build-file": "node utils/copy-build-files.js"
   },
