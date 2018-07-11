@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const svgFolder = path.resolve(__dirname + '/../assets/sdc-icons/');
+const svgFolderCommon = path.resolve(__dirname + '/../assets/sdc-icons/common/');
+const svgFolderResources = path.resolve(__dirname + '/../assets/sdc-icons/resources/');
 const iconMapFile = path.resolve(__dirname + '/../lib/icons-map.json');
 const iconMapTSFile = path.resolve(__dirname + '/../lib/icons-map.js');
 const disallowedSvgAttributes = ['fill', 'id', 'width', 'height'];
@@ -24,7 +25,7 @@ const disallowedSvgStyleRegex = _makeSvgStyleRegex(disallowedSvgStyle);
 const disallowedSvgInlineAttributesRegex = _makeSvgAttributesRegex(disallowedSvgInlineAttributes);
 const disallowedSvgInlineStyleRegex = _makeSvgStyleRegex(disallowedSvgInlineStyle);
 
-function addIcon(iconsObject, iconName, iconPath) {
+function addIcon(iconsObject, category, iconName, iconPath) {
     let iconContent = fs.readFileSync(iconPath).toString();
     if (!iconContent) {
         return;
@@ -63,7 +64,11 @@ function addIcon(iconsObject, iconName, iconPath) {
 
     console.log(`# ${iconName}: ${iconInfoMsg}`);
 
-    iconsObject[iconName] = iconContent;
+    if (!iconsObject.hasOwnProperty(category)){
+        iconsObject[category] = {};
+    }
+
+    iconsObject[category][iconName] = iconContent;
 }
 
 function main() {
@@ -71,18 +76,10 @@ function main() {
     if (!fs.existsSync(iconMapDir)) {
         fs.mkdirSync(iconMapDir);
     }
-
-    const iconsObject = {};
-    fs.readdirSync(svgFolder).forEach((file) => {
-        const fileName = file.split('.', 2)[0];
-        const fileExtension = file.split('.', 2)[1];
-        if (fileExtension === 'svg') {
-            const filePath = svgFolder + '/' + file;
-            if (fs.existsSync(filePath)) {
-                addIcon(iconsObject, fileName, filePath);
-            }
-        }
-    });
+    
+    let iconsObject = {};
+    readSvg(iconsObject, "common", svgFolderCommon);
+    readSvg(iconsObject, "resources", svgFolderResources);
 
     const dataToWrite = JSON.stringify(iconsObject);
 
@@ -90,6 +87,21 @@ function main() {
     fs.writeFileSync(iconMapTSFile, `export default ${dataToWrite};`);
 
     console.log(`Icons Map JSON created! [${iconMapFile}]`);
+}
+
+function readSvg(iconsObject, category, path) {
+    console.log("path: " + path);
+    fs.readdirSync(path).forEach((file) => {
+        console.log(file);
+        const fileName = file.split('.', 2)[0];
+        const fileExtension = file.split('.', 2)[1];
+        if (fileExtension === 'svg') {
+            const filePath = path + '/' + file;
+            if (fs.existsSync(filePath)) {
+                addIcon(iconsObject, category, fileName, filePath);
+            }
+        }
+    });
 }
 
 main();
