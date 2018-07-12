@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const svgFolderCommon = path.resolve(__dirname + '/../assets/sdc-icons/common/');
-const svgFolderResources = path.resolve(__dirname + '/../assets/sdc-icons/resources/');
+const svgFolder = path.resolve(__dirname + '/../assets/sdc-icons');
 const iconMapFile = path.resolve(__dirname + '/../lib/icons-map.json');
 const iconMapTSFile = path.resolve(__dirname + '/../lib/icons-map.js');
 const disallowedSvgAttributes = ['fill', 'id', 'width', 'height'];
@@ -76,17 +75,25 @@ function main() {
     if (!fs.existsSync(iconMapDir)) {
         fs.mkdirSync(iconMapDir);
     }
-    
-    let iconsObject = {};
-    readSvg(iconsObject, "common", svgFolderCommon);
-    readSvg(iconsObject, "resources", svgFolderResources);
 
+    let iconsObject = {};
+    const directories = getDirectories(svgFolder);
+    directories.map((directory) => {
+        const _path = path.resolve(__dirname + '/../assets/sdc-icons/' + directory);
+        readSvg(iconsObject, directory, _path);
+    });
     const dataToWrite = JSON.stringify(iconsObject);
 
     fs.writeFileSync(iconMapFile, dataToWrite);
     fs.writeFileSync(iconMapTSFile, `export default ${dataToWrite};`);
 
     console.log(`Icons Map JSON created! [${iconMapFile}]`);
+}
+
+function getDirectories(path) {
+    return fs.readdirSync(path).filter(function (file) {
+        return fs.statSync(path+'/'+file).isDirectory();
+    });
 }
 
 function readSvg(iconsObject, category, path) {
