@@ -20,14 +20,15 @@
   ],
   "scripts": {
     "prebuild": "node utils/delete-folders.js",
-    "build": "npm run build-common",
-    "build-common": "npm run prebuild && npm run build-icons && npm run copy-build-file",
-    "build-icons": "node utils/create-svg-icons-map.js",
-    "copy-build-file": "node utils/copy-build-files.js"
+    "build": "npm run build:common",
+    "build:common": "npm run prebuild && npm run build:icons && npm run build:copy-files && npm run build:scss",
+    "build:icons": "node utils/create-svg-icons-map.js",
+    "build:scss": "node-sass styles/style.scss -o lib",
+    "build:copy-files": "copyfiles -f styles/common/mixins.scss lib/scss && copyfiles -f styles/common/variables.scss lib/scss"
   },
   "devDependencies": {
+    "copyfiles": "^2.0.0",
     "delete": "^1.1.0",
-    "copy": "^0.3.2",
-    "copy-dir": "^0.3.0"
+    "node-sass": "^4.9.2"
   }
 }
