@@ -182,8 +182,10 @@
   // File opener
   &.sdc-button__file-opener {
     input[type=file] {
+      height: 36px;
       opacity: 0;
       position: absolute;
+      cursor: pointer;
     }
   }
 
