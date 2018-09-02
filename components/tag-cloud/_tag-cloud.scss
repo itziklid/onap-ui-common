@@ -89,6 +89,9 @@
       &.view-only{
         border-color: $silver;
       }
+      .item-text{
+         @include ellipsis($width: 100px);
+      }
       .delete-item{
         cursor: pointer;
         padding-left: 10px;
