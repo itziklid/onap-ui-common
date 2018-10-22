@@ -7,10 +7,6 @@
     display: none;
   }
 
-  &.headless {
-    display: none;
-  }
-
   /*************************************
   SDC DropDown styles
    *************************************/
@@ -101,81 +97,7 @@
     }
   }
 
-  .sdc-dropdown__options-list {
-    position: relative;
-    opacity: 0;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-height: 0;
-    overflow-y: auto;
-    box-sizing: border-box;
-    border: 1px solid $light-blue;
-    background-color: white;
-    box-shadow: 0 3px 7px -3px $dark-gray;
-    z-index: 999;
-    &.sdc-dropdown__options-wrapper--top {
-      bottom: 40px;
-      border-top: 1px solid $light-blue;
-    }
-    &.sdc-dropdown__options-list--headless {
-      border-top: 1px solid $light-blue;
-    }
-    .sdc-dropdown__option {
-      @include base-font-regular;
-      font-size: 14px;
-      text-indent: 10px;
-      padding: 10px;
-      background: transparent;
-      cursor: pointer;
-      height: 40px;
-      box-sizing: border-box;
-      &.sdc-dropdown__option--hr {
-        height: 1px;
-        overflow: hidden;
-        border-top: 1px solid $silver;
-        padding: 0;
-        margin: 10px 20px;
-      }
-      &.sdc-dropdown__option--group {
-        text-indent: 30px;
-      }
-      &:hover {
-        background-color: $light-silver;
-        //@include base-font-semibold;
-      }
-      &.selected {
-        background-color: $lighter-blue;
-        color: $blue;
-        @include base-font-semibold;
-      }
-      &.sdc-dropdown__option--header {
-        @include base-font-semibold;
-        color: $text-black;
-        cursor: default;
-        &.sdc-dropdown__option--group {
-          text-indent: 10px;
-        }
-        &:hover {
-          background-color: transparent;
-        }
-      }
-      &.sdc-dropdown__option--disabled {
-        color: $gray;
-        cursor: default;
-        &:hover {
-          background-color: transparent;
-        }
-        &::after {
-          color: $gray;
-        }
-        &:focus {
-          border: solid 1px $light-gray;
-          outline: none;
-        }
-      }
-    }
-  }
+
   .sdc-dropdown__select {
     @include base-font-regular;
     text-indent: 6px;
@@ -263,17 +185,6 @@
       margin: 4px 0;
       @include body-3;
     }
-    .sdc-dropdown__options-wrapper--frame {
-      .sdc-dropdown__options-list {
-        border: 1px solid $red;
-        border-top: none;
-      }
-      &.sdc-dropdown__options-wrapper--top {
-        .sdc-dropdown__options-list {
-          border-top: 1px solid $red;
-        }
-      }
-    }
     .svg-icon.__exclamationTriangleFull {
       width: 12px;
       height: 10px;
@@ -286,61 +197,83 @@
   fill: $red;
 }
 
-/********************************************************/
 
-/* Animation */
-
-/********************************************************/
-
-@include keyframes-expand-animation('top-to-bottom-exp', 244px);
-@include keyframes-collapse-animation('top-to-bottom', 244px);
-@include keyframes-expand-animation('bottom-to-top-exp', 244px);
-@include keyframes-collapse-animation('bottom-to-top', 244px);
-.sdc-dropdown__options-wrapper--frame {
-  overflow: hidden;
-  position: absolute;
-  top: auto;
+.dropdown-results {
+  animation: top-to-bottom .0s forwards;
+  position: relative;
+  opacity: 0;
+  top: 100%;
+  left: 0;
   width: 100%;
-  &.sdc-dropdown__options-wrapper--top {
-    bottom: 40px;
-    top: auto;
-    padding: 10px 0 0 0;
-    /* Expend animation from bottom to top */
-    .sdc-dropdown__options-list {
-      border-top: 1px solid $light-blue;
-      box-shadow: 0 0 7px -1px $dark-gray;
-      &.sdc-dropdown__options-list--animation-init {
-        border-bottom: none;
-        padding: 0;
-        animation: bottom-to-top .0s forwards;
+  max-height: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border: 1px solid $blue;
+  background-color: white;
+  border-top: none;
+  box-shadow: 0 3px 7px -3px $dark-gray;
+  z-index: 999;
+
+  .sdc-dropdown__option {
+    @include base-font-regular;
+    font-size: 14px;
+    text-indent: 10px;
+    padding: 10px;
+    background: transparent;
+    cursor: pointer;
+    height: 30px;
+    line-height: 10px;
+    box-sizing: border-box;
+    &.sdc-dropdown__option--hr {
+      height: 1px;
+      overflow: hidden;
+      border-top: 1px solid $silver;
+      padding: 0;
+      margin: 10px 20px;
+    }
+    &.sdc-dropdown__option--group {
+      text-indent: 30px;
+    }
+    &:hover {
+      background-color: $light-silver;
+      //@include base-font-semibold;
+    }
+    &.selected {
+      background-color: $lighter-blue;
+      color: $blue;
+      @include base-font-semibold;
+    }
+    &.sdc-dropdown__option--header {
+      @include base-font-semibold;
+      color: $text-black;
+      cursor: default;
+      &.sdc-dropdown__option--group {
+        text-indent: 10px;
+      }
+      &:hover {
+        background-color: transparent;
       }
     }
-    &.sdc-dropdown__options-wrapper--uncollapsed {
-      .sdc-dropdown__options-list {
-        animation: bottom-to-top-exp .0s forwards;
+    &.sdc-dropdown__option--disabled {
+      color: $gray;
+      cursor: default;
+      &:hover {
+        background-color: transparent;
+      }
+      &::after {
+        color: $gray;
+      }
+      &:focus {
+        border: solid 1px $light-gray;
+        outline: none;
       }
     }
   }
 }
 
-/**
-Fold animation from top to bottom
- */
-
-.sdc-dropdown {
-  .sdc-dropdown__options-list.sdc-dropdown__options-list--animation-init {
-    animation: top-to-bottom .0s forwards;
-  }
+.dropdown-results__animation-open{
+  animation: top-to-bottom-exp .0s forwards;
 }
-
-/**
-Expend animation from top to bottom
- */
-
-.sdc-dropdown {
-  .sdc-dropdown__options-wrapper--uncollapsed {
-    .sdc-dropdown__options-list.sdc-dropdown__options-list--animation-init {
-      animation: top-to-bottom-exp .0s forwards;
-    }
-  }
+.dropdown-results__animation-close{
+  animation: top-to-bottom .0s forwards;
 }
