@@ -271,6 +271,11 @@
   }
 }
 
+@include keyframes-expand-animation('top-to-bottom-exp', 244px);
+@include keyframes-collapse-animation('top-to-bottom', 244px);
+@include keyframes-expand-animation('bottom-to-top-exp', 244px);
+@include keyframes-collapse-animation('bottom-to-top', 244px);
+
 .dropdown-results__animation-open{
   animation: top-to-bottom-exp .0s forwards;
 }
