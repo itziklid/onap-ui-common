@@ -1,202 +1,22 @@
 .sdc-dropdown {
   @include body-1;
-  position: relative;
-  display: block;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
 
-  .sdc-dropdown__error--block {
-    display: none;
-  }
-
-  /*************************************
-  SDC DropDown styles
-   *************************************/
-  .sdc-dropdown__component-container {
-    position: relative;
-    height: 40px;
-
-    .sdc-dropdown__header {
-      background: $white;
-      text-align: left;
-      position: relative;
-      color: $dark-gray;
-      @include base-font-regular;
-      font-size: 14px;
-      text-indent: 6px;
-      border: solid 1px $light-gray;
+  .sdc-dropdown__input {
       width: 100%;
-      height: 40px;
-      line-height: 36px;
-      box-sizing: border-box;
-      border-radius: 2px;
 
-      &.placeholder {
-        @include base-font-italic;
-        color: $gray;
-      }
-
-      &.disabled {
-        border: solid 1px $light-gray;
-        background-color: $light-silver;
-        color: $light-gray;
-        cursor: default;
-
-        &:focus {
-          border: solid 1px $light-gray;
-          outline: none;
-          .svg-icon>svg {
-            fill: $light-gray;
-          }
-        }
-        .svg-icon>svg {
-          fill: $light-gray;
-        }
-      }
-
-      &:focus {
-        border: solid 1px $light-blue;
-        outline: none;
-        .svg-icon>svg {
-          fill: $light-blue;
-        }
-      }
-
-      .sdc-dropdown-handle {
-        float: right;
-        .svg-icon>svg {
-          fill: $dark-gray;
-        }
-      }
-
-      svg-icon {
-        margin: 10px 6px;
-        float: right;
-      }
-
-    }
-
-  }
-
-  &.open-bottom {
-    .sdc-dropdown__header {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-
-      border: 1px solid $light-blue;
-      box-sizing: border-box;
-      .svg-icon>svg {
-        fill: $light-blue;
-      }
-
+    /deep/.sdc-input {
+      margin-bottom:0px;
+      width: 100%;
     }
   }
-
-  &.open-top {
-    .sdc-dropdown__header {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-  }
-
-
-  .sdc-dropdown__select {
-    @include base-font-regular;
-    text-indent: 6px;
-    border: solid 1px $light-gray;
-    width: 100%;
-    &.disabled {
-      opacity: 0.7;
-    }
-    option {
-      padding: 3px;
-    }
-  }
-  .sdc-dropdown__label {
-    margin-bottom: 5px;
-    display: block;
-    @include body-3-emphasis;
-    color: $text-black;
-    &.required::before {
-      content: '*';
-      color: $red;
-      margin: 0 4px 0 0;
-    }
-  }
-
-  /*************************************
-  SDC Auto-DropDown styles
-   *************************************/
-   &.open-bottom {
-    .sdc-dropdown-auto__wrapper {
-      border: 1px solid $light-blue;
-      box-sizing: border-box;
-      .svg-icon>svg {
-        fill: $light-blue;
-      }
-    }
-  }
-
-  .sdc-dropdown-auto__wrapper {
-    display: flex;
-    border: solid 1px $light-gray;
-    border-radius: 2px;
-
-    .sdc-dropdown__header {
-      border: none;
-      color: $gray;
-
-      &:focus {
-        border: none;
-      }
-    }
-
-    svg-icon {
-      margin: 12px 10px;
-      float: right;
-    }
-  }
-
-  /*************************************
-  SDC Error styles
-   *************************************/
-  &.sdc-dropdown__error {
-    .sdc-dropdown__header {
-      border: solid 1px $red;
-      @include font-error;
-      &::after {
-        @include font-error;
-      }
-      &:focus {
-        border: solid 1px $red;
-        .sdc-dropdown-handle {
-          use {
-            fill: $red;
-          }
-        }
-      }
-      .sdc-dropdown-handle {
-        use {
-          fill: $red;
-        }
-      }
-    }
-    .sdc-dropdown__error--block {
-      display: block;
-      @include font-error;
-      margin: 4px 0;
-      @include body-3;
-    }
-    .svg-icon.__exclamationTriangleFull {
-      width: 12px;
-      height: 10px;
-      margin-right: 6px;
-    }
+  .sdc-dropdown__icon {
+    position:absolute;
+    right: 35px;
   }
 }
-
-.sdc-dropdown__error--icon {
-  fill: $red;
-}
-
 
 .dropdown-results {
   animation: top-to-bottom .0s forwards;
