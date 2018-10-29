@@ -17,6 +17,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
     .sdc-input__input {
       @include box-sizing;
       padding: 0 10px;
@@ -85,7 +86,7 @@
     }
     .input-right-icon{
       position: absolute;
-      right: 30px;
+      right: 10px;
     }
     .sdc-label__error {
       margin-top: 2px;
