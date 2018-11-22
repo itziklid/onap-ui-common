@@ -1,4 +1,4 @@
-.sdc-autocomplete-container{
+.autocomplete-container{
     position: relative;
 
     &.results-shown{
@@ -6,6 +6,10 @@
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
       }
+    }
+
+    .dropdown-results {
+      position:absolute;
     }
 
     ul.autocomplete-results {
