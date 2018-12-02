@@ -1,4 +1,25 @@
 .sdc-tabs {
+  &.vertical {
+
+    .sdc-tabs-list {
+      float: left;
+
+      .sdc-tab {
+        display: block;
+
+        &.sdc-tab-active {
+          border-left: 2px solid #009fdb;
+          border-bottom: none;
+          margin-left: -2px;
+        }
+      }
+    }
+
+    .sdc-tab-content {
+      margin-top: 0;
+    }
+  }
+
   .sdc-tab {
 	display: inline-block;
 	cursor: pointer;
