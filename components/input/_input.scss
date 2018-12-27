@@ -81,7 +81,12 @@
         color: $gray;
         @include base-font-italic;
       }
+      &.isViewMode {
+        background: transparent;
+        color: $dark-gray;
+      }
     }
+
     .input-right-icon{
       position: absolute;
       right: 10px;
