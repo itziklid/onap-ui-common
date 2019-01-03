@@ -99,6 +99,11 @@
           color: $white;
           padding-top: 0px;
           @include heading-3;
+          align-items: center;
+          display: inline-flex;
+          .svg-icon{
+            padding-left: 10px;
+          }
         }
         .sdc-modal__close-button {
           margin-top: 0px;
