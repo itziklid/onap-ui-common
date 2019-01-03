@@ -1,0 +1,52 @@
+.sdc-popover {
+  border-top: 6px solid #009FDB;
+  background: white;
+  border-radius: 0;
+  min-height: 50px;
+  min-width: 250px;
+  max-width: 350px;
+  z-index: 1300;
+  position: absolute;
+  color:#666666;
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+
+  .outerContainer{
+    padding: 10px 10px 10px 20px;
+  }
+
+  .innerContainer{
+    padding: 10px 15px 10px 0px;
+  }
+
+  .closeButton{
+    float:right;
+    overflow:hidden;
+    height:100%;
+  }
+
+  .title{
+    overflow:hidden;
+    font-family: OpenSans-Regular, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(25,25,25,1);
+    padding: 0px 0px 8px 0px;
+  }
+
+  .content{
+    overflow:hidden;
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    color: rgba(25,25,25,1);
+    padding: 0px 0px 8px 0px;
+  }
+
+}
+
+
+
+
+
+
