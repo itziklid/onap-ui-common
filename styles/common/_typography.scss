@@ -18,13 +18,13 @@ $body-font-4: 10px;
 @mixin base-font-italic(){
   font-family: OpenSans-Italic, OpenSans-Regular, Arial, sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 @mixin base-font-semibold() {
   font-family: OpenSans-Semibold, Arial, sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 @mixin font-error() {
