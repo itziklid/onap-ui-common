@@ -1,6 +1,6 @@
 {
   "name": "onap-ui-common",
-  "version": "1.0.84",
+  "version": "1.0.85",
   "private": false,
   "license": "MIT",
   "author": "",
@@ -24,7 +24,7 @@
     "build:common": "npm run prebuild && npm run build:icons && npm run build:copy-files && npm run build:scss",
     "build:icons": "node utils/create-svg-icons-map.js",
     "build:scss": "node-sass styles/style.scss -o lib",
-    "build:copy-files": "copyfiles -f styles/common/mixins.scss lib/scss && copyfiles -f styles/common/variables.scss lib/scss"
+    "build:copy-files": "copyfiles -f styles/common/mixins.scss lib/scss && copyfiles -f styles/common/_typography.scss lib/scss && copyfiles -f styles/common/variables.scss lib/scss && copyfiles components/**/*.html lib/html && copyfiles -f assets/icons/* lib/icons"
   },
   "devDependencies": {
     "copyfiles": "^2.0.0",

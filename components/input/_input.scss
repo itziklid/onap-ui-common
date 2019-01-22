@@ -91,10 +91,10 @@
       position: absolute;
       right: 10px;
     }
-    .sdc-label__error {
-      margin-top: 2px;
-      margin-left: 2px;
-      @include body-3;
-    }
+  }
+  .sdc-label__error {
+    margin-top: 2px;
+    margin-left: 2px;
+    @include body-3;
   }
 }

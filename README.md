@@ -23,6 +23,9 @@ To use the SCSS files you need to reference them from your local SCSS file and c
 @import '../../../node_modules/onap-ui-common/styles/style.scss'; 
 ```
 
+HTML files are included for reference of how the react and angular projects should output the DOM
+SVG files are also included - allowing the react SVGIcon component, and consumption via CSS if needed
+
 ### See also
 [ONAP-UI-ANGULAR](https://github.com/onap-sdc/onap-ui-angular)
 
