@@ -188,6 +188,20 @@
       cursor: pointer;
     }
   }
+  /*** Sizes ***/
+  &.btn-x-large{
+    width: $btn-xx-large;
+    input[type=file] {
+      width: $btn-xx-large;
+    }
+  }
+
+  &.btn-x-large{
+    width: $btn-x-large;
+    input[type=file] {
+      width: $btn-x-large;
+    }
+  }
 
   /*** Sizes ***/
   &.btn-large{
