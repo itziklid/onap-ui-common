@@ -14,12 +14,10 @@
   .file-upload-button {
     position: relative;
     cursor: pointer;
-    cursor: pointer;
-    .file-upload-svg-icon {
-      border: solid 1px #d2d2d2;
-      border-left: none;
-    }
-    /deep/.file-opener {
+    border: solid 1px #d2d2d2;
+    border-left: none;
+    
+    .file-opener {
       top:0px;
       right: 0px;
       left: 0px;
