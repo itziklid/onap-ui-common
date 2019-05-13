@@ -1,8 +1,16 @@
 
 
 @mixin color-icon($primary-color) {
-    color: $primary-color;
-    fill: $primary-color;
+    
+    &:not(.stroke){
+        color: $primary-color;
+        fill: $primary-color;
+    }
+
+    &.stroke path, &.stroke circle{
+        stroke: $primary-color;
+    }
+
 }
 
 @mixin color-icon-hover($secondary-color) {
