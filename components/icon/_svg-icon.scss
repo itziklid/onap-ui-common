@@ -1,14 +1,12 @@
 
 
 @mixin color-icon($primary-color) {
-    
-    &:not(.stroke){
         color: $primary-color;
         fill: $primary-color;
-    }
 
-    &.stroke path, &.stroke circle{
+    svg.stroke {
         stroke: $primary-color;
+        fill: transparent;
     }
 
 }

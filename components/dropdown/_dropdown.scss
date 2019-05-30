@@ -5,9 +5,12 @@
   .sdc-dropdown__input {
       width: 100%;
 
-    /deep/.sdc-input {
+    ::ng-deep.sdc-input {
       margin-bottom:0px;
       width: 100%;
+      input[disabled] {
+        pointer-events: none;
+      }
     }
   }
   .sdc-dropdown__icon {
