@@ -12,6 +12,11 @@
         pointer-events: none;
       }
     }
+
+    .sdc-input .sdc-input__input.isViewMode.disabled {
+      background: $light-silver;
+      color: $gray;
+    }
   }
   .sdc-dropdown__icon {
     position:absolute;
