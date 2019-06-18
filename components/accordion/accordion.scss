@@ -21,6 +21,11 @@
       &.down {
         transform: rotate(180deg);
       }
+      .svg-icon {
+        fill: $gray;
+        width: 14px;
+        height: 8px;
+      }
     }
     &.arrow-right {
       justify-content: space-between;
